@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5ebe0;
+    color: #4b2e1e;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* ---------- Navbar ---------- */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 50px;
+    background-color: #7a5640;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #f5ebe0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #f5ebe0;
+}
+
+.block {
+    padding-block: 7px 5px;
+}
+
+.alt {
+    background-color: #ebd9c3;
+}
+
+.wrap {
+    max-width: 1000px;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+/* ---------- Hero ---------- */
+.hero {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    height: 450px;
+    overflow: hidden;
+    color: white;
+}
+
+.hero {
+    height: 85vh;
+min-height: 520px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    justify-self: start;
+    width: min(560px, 100%);
+    padding: 40px 60px;
+    text-align: left;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 36px;
+    background-color: #d4833a;
+    color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+/* ---------- ১. মেনু গ্রিড ---------- */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 300px));
+    gap: 50px;
+    padding: 100px;
+}
+
+.menu-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.info {
+    padding: 20px;
+}
+
+.info h3 {
+    margin-bottom: 6px;
+}
+
+.price {
+    display: inline-block;
+    margin-top: 8px;
+    font-weight: bold;
+    color: #d4833a;
+}
+
+.title{
+padding-top: 25px;
+padding-bottom: none;
+text-align: center;
+text-decoration: underline;
+}
+
+/* ---------- ২. আজকের স্পেশাল ---------- */
+.special-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 180px);
+    gap: 20px;
+}
+
+.special-big {
+    grid-column: span 2;
+    grid-row: span 2;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    border-radius: 15px;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)),
+                      url('images/hero.jpg');       /* <-- এই লাইন */
+    background-size: cover;
+    background-position: center;
+}
+
+.special-big h3 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.special-small {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.special-small p {
+    color: #d4833a;
+    font-weight: bold;
+}
+/* ---------- About ---------- */
+.about {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 70px 50px;
+    background-color: #ebd9c3;
+}
+
+.about img {
+    width: 45%;
+    border-radius: 15px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    color: #7a5640;
+    margin-bottom: 12px;
+}
+
+.about-text p {
+    margin-bottom: 12px;
+}
+
+/* ---------- Footer ---------- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #7a5640;
+    color: #f5ebe0;
+    font-size: 0.95rem;
+}
+
+.footer ul {
+    display: flex;
+    gap: 20px;
+}
+
+.footer a {
+    color: #f5ebe0;
+}
