@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The Olive Table, a small tea house serving fresh tea, coffee, sandwiches and snacks.">
+  <title>The Olive Table</title>
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Fonts: Playfair Display (headings) and Poppins (body) -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Our own styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ============ 1. HERO + NAVBAR ============ -->
+  <header class="hero" id="home">
+    <img class="hero-bg" src="images/cafe-banner.png" alt="A cup of tea on a table">
+
+    <nav class="navbar">
+      <a href="#home" class="logo">
+        <img src="images/logo.png" alt="" class="logo-img">
+        <span>The Olive Table</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#blends">Blends</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#find-us">Find Us</a></li>
+      </ul>
+
+      <a href="#contact" class="btn-contact">Contact Us</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu">&#9776;</button>
+    </nav>
+
+    <div class="hero-content">
+      <p class="hero-small">Tea is a quiet ritual</p>
+      <h1>OF EVERY GOOD DAY</h1>
+      <p class="hero-text">
+        From a gentle white tea to a bold, earthy blend,
+        every cup here is made to slow your day down.
+      </p>
+      <a href="#menu" class="btn">View Our Menu</a>
+    </div>
+  </header>
+
+
+  <!-- ============ 2. OUR MENU ============ -->
+  <section class="menu" id="menu">
+
+    <div class="section-head">
+      <p class="section-tag">OUR MENU</p>
+    </div>
+
+    <div class="menu-tabs">
+      <button class="tab-btn active" data-filter="all">All</button>
+      <button class="tab-btn" data-filter="tea">Tea</button>
+      <button class="tab-btn" data-filter="coffee">Coffee</button>
+      <button class="tab-btn" data-filter="sandwich">Sandwich</button>
+      <button class="tab-btn" data-filter="snacks">Snacks</button>
+      <button class="tab-btn" data-filter="cold drinks">Cold Drinks</button>
+    </div>
+
+    <div class="menu-slider">
+      <button class="arrow arrow-left" id="menuPrev" aria-label="Previous">&#8592;</button>
+
+      <div class="menu-row" id="menuRow">
+
+        <!-- Tea -->
+        <div class="menu-card" data-category="tea">
+          <img src="images/masala-chai.png" alt="Masala Chai" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Tea</span>
+            <h3>Masala Chai</h3>
+            <p>Spiced black tea simmered with fresh milk.</p>
+            <span class="price">₹40</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="tea">
+          <img src="images/lemon-tea.png" alt="Lemon Tea" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Tea</span>
+            <h3>Lemon Tea</h3>
+            <p>Warm honey, bright lemon, one soothing sip.</p>
+            <span class="price">₹50</span>
+          </div>
+        </div>
+
+        <!-- Coffee -->
+        <div class="menu-card" data-category="coffee">
+          <img src="images/indian-filter-coffee.jpg" alt="Indian Filter Coffee" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Coffee</span>
+            <h3>Indian Filter Coffee</h3>
+            <p>Slow-dripped, frothy and strong, the way mornings should begin.</p>
+            <span class="price">₹60</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="coffee">
+          <img src="images/cold-coffee.png" alt="Cold Coffee" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Coffee</span>
+            <h3>Cold Coffee</h3>
+            <p>Chilled coffee blended with milk and a scoop of ice cream.</p>
+            <span class="price">₹100</span>
+          </div>
+        </div>
+
+        <!-- Sandwich -->
+        <div class="menu-card" data-category="sandwich">
+          <img src="images/vegetable-sandwich.png" alt="Vegetable Sandwich" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Sandwich</span>
+            <h3>Vegetable Sandwich</h3>
+            <p>Crisp-grilled bread, green chutney with veggies, classic combo.</p>
+            <span class="price">₹110</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="sandwich">
+          <img src="images/paneer-tikka-melt.jpg" alt="Paneer Tikka Melt" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Sandwich</span>
+            <h3>Paneer Tikka Melt</h3>
+            <p>Savoury paneer tikka and crunchy veggies in every bite.</p>
+            <span class="price">₹95</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="sandwich">
+          <img src="images/chicken-cheese-melt.png" alt="Chicken Cheese Melt" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Sandwich</span>
+            <h3>Chicken Cheese Melt</h3>
+            <p>Juicy grilled chicken and creamy cheese, perfectly toasted.</p>
+            <span class="price">₹125</span>
+          </div>
+        </div>
+
+        <!-- Snacks -->
+        <div class="menu-card" data-category="snacks">
+          <img src="images/samosa.jpg" alt="Samosa" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Snacks</span>
+            <h3>Samosa</h3>
+            <p>Crisp golden pastry stuffed with spiced potato and peas.</p>
+            <span class="price">₹30</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snacks">
+          <img src="images/chiken-cutlet.png" alt="Chicken Cutlet" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Snacks</span>
+            <h3>Chicken Cutlet</h3>
+            <p>Crunchy outside, juicy spiced chicken inside.</p>
+            <span class="price">₹110</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snacks">
+          <img src="images/onion-pakora.png" alt="Onion Pakora" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Snacks</span>
+            <h3>Onion Pakora</h3>
+            <p>Crisp, golden fritters, made for rainy evenings.</p>
+            <span class="price">₹50</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snacks">
+          <img src="images/veg-puff.jpg" alt="Veg Puff" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Snacks</span>
+            <h3>Veg Puff</h3>
+            <p>Flaky pastry with a spiced vegetable filling.</p>
+            <span class="price">₹40</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="snacks">
+          <img src="images/bread-pakora.jpg" alt="Bread Pakora" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Snacks</span>
+            <h3>Bread Pakora</h3>
+            <p>Golden-fried bread stuffed with spiced potato.</p>
+            <span class="price">₹40</span>
+          </div>
+        </div>
+
+        <!-- Cold drinks -->
+        <div class="menu-card" data-category="cold drinks">
+          <img src="images/lassi.jpg" alt="Lassi" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Cold Drinks</span>
+            <h3>Lassi</h3>
+            <p>Thick, chilled and creamy, served in a clay cup.</p>
+            <span class="price">₹90</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="cold drinks">
+          <img src="images/mango-lassi.jpg" alt="Mango Lassi" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Cold Drinks</span>
+            <h3>Mango Lassi</h3>
+            <p>Ripe mango blended into thick, chilled yogurt.</p>
+            <span class="price">₹110</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="cold drinks">
+          <img src="images/fresh-lime-soda.png" alt="Fresh Lime Soda" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Cold Drinks</span>
+            <h3>Fresh Lime Soda</h3>
+            <p>Sweet, salty or mixed, your fizzy pick-me-up.</p>
+            <span class="price">₹60</span>
+          </div>
+        </div>
+
+        <div class="menu-card" data-category="cold drinks">
+          <img src="images/jaljeera.png" alt="Jaljeera" loading="lazy">
+          <div class="card-info">
+            <span class="card-tag">Cold Drinks</span>
+            <h3>Jaljeera</h3>
+            <p>Tangy, spicy and cool, the street-side thirst quencher.</p>
+            <span class="price">₹50</span>
+          </div>
+        </div>
+
+      </div>
+
+      <button class="arrow arrow-right" id="menuNext" aria-label="Next">&#8594;</button>
+    </div>
+  </section>
+
+
+  <!-- ============ 3. SIGNATURE BLENDS ============ -->
+  <section class="blends" id="blends">
+
+    <div class="section-head">
+      <p class="section-tag">OUR SPECIALS</p>
+      <p class="section-text">
+        Three blends our guests keep coming back for,
+        brewed fresh every morning.
+      </p>
+    </div>
+
+    <div class="blend-showcase">
+
+      <div class="blend-item blend-side">
+        <img src="images/blend-1.png" alt="Jasmine Green Tea" loading="lazy">
+        <p class="blend-name">Jasmine Green Tea</p>
+        <p class="blend-line">Fresh green tea with a soft jasmine smell.</p>
+      </div>
+
+      <div class="blend-item blend-main">
+        <img src="images/blend-2.png" alt="Darjeeling First Flush" loading="lazy">
+        <p class="blend-name">Darjeeling First Flush</p>
+        <p class="blend-line">Light, bright and floral, from the first spring harvest.</p>
+      </div>
+
+      <div class="blend-item blend-side">
+        <img src="images/blend-3.png" alt="Kashmiri Kahwa" loading="lazy">
+        <p class="blend-name">Kashmiri Kahwa</p>
+        <p class="blend-line">Warm saffron tea with almonds, cardamom and cinnamon.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============ 4. TEAM ============ -->
+  <section class="team" id="team">
+
+    <div class="section-head">
+      <p class="section-tag">OUR TEAM</p>
+      <h2>Meet Our Tea <span class="highlight">Masters</span></h2>
+    </div>
+
+    <div class="team-grid">
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/team-1.png" alt="Arjun Sen" loading="lazy">
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <h3>Arjun Sen</h3>
+        <p class="role">TEA MASTER</p>
+        <p class="bio">Blends every cup by taste and smell.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/team-2.png" alt="Meera Das" loading="lazy">
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <h3>Meera Das</h3>
+        <p class="role">BARISTA</p>
+        <p class="bio">Pours the smoothest filter coffee in town.</p>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="images/team-3.png" alt="Rohan Paul" loading="lazy">
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.pinterest.com/" target="_blank" rel="noopener noreferrer" aria-label="Pinterest"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <h3>Rohan Paul</h3>
+        <p class="role">SNACK CHEF</p>
+        <p class="bio">Makes our crispy snacks fresh every morning.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============ 5. FIND US ============ -->
+  <section class="find-us" id="find-us">
+
+    <div class="section-head">
+      <p class="section-tag">VISIT US</p>
+      <h2>Where You Can Find Us</h2>
+      <p class="section-text">Drop by any of our cafés and taste something new.</p>
+    </div>
+
+    <div class="map-box">
+      <iframe title="Map showing our café area"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6195.132142666349!2d88.29588434687847!3d22.592279432438048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02786e450cead3%3A0x4d589fab7158cd1a!2sRamrajatala%2C%20Howrah%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1794897204801!5m2!1sen!2sin"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </div>
+
+    <div class="location-cards">
+
+      <div class="location-card">
+        <h3>Main Street Café</h3>
+        <div class="info">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>Ramrajatala, Howrah</p>
+        </div>
+        <div class="info">
+          <i class="fa-regular fa-clock"></i>
+          <p>8:00 am - 8:00 pm</p>
+        </div>
+        <div class="divider"></div>
+        <a href="#" class="get-direction">GET DIRECTION <i class="fa-solid fa-arrow-right-long"></i></a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============ 6. FOOTER ============ -->
+  <footer class="footer" id="contact">
+
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <a href="#home" class="logo footer-logo">
+          <img src="images/logo.png" alt="" class="logo-img">
+          <span>The Olive Table</span>
+        </a>
+        <p>A small tea house for slow mornings, good company and one more cup.</p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://x.com/" target="_blank" rel="noopener noreferrer" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#blends">Blends</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#find-us">Find Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Catering</a></li>
+          <li><a href="#">Gift Cards</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <p class="hours"><i class="fa-regular fa-clock"></i> 8 AM - 8 PM, Monday - Sunday</p>
+        <p>Walk in any time, or book ahead for a group.</p>
+        <a href="#find-us" class="btn footer-btn">Reserve a Table</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>The Olive Table &ndash; demo project, fictional café</p>
+      <p>&copy; 2026 The Olive Table. All rights reserved.</p>
+    </div>
+
+  </footer>
+
+  <!-- Scroll to top button -->
+  <a href="#home" class="to-top" id="toTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

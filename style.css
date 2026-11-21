@@ -1,0 +1,1041 @@
+/* =====================================================
+   The Olive Table - Tea House
+   Palette: Sage & Cream
+   ===================================================== */
+
+/* ---------- 1. Variables and reset ---------- */
+:root {
+  --primary: #4F7A5C;
+  --accent: #D9A441;
+  --accent-dark: #8A5E10;   /* darker gold, used for small gold TEXT so it is easy to read */
+  --text: #2F3E34;
+  --bg: #F7F3EA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* ---------- 2. Hero ---------- */
+.hero {
+  position: relative;
+  z-index: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center right;
+  z-index: -1;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 8%;
+  max-width: 560px;
+}
+
+.hero-small {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.hero-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.2rem;
+  line-height: 1.15;
+  margin: 8px 0 20px;
+}
+
+.hero-text {
+  line-height: 1.7;
+  margin-bottom: 28px;
+  font-size: 1.1rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+
+/* ---------- 3. Navbar ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-weight: 500;
+  transition: color 0.3s;
+  font-size: 1.5rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--primary);
+}
+
+.btn-contact {
+  background: var(--primary);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background 0.3s;
+  font-size: 1.2rem;
+}
+
+.btn-contact:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+
+/* ---------- 4. Shared section heading ---------- */
+.section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  color: var(--accent-dark);
+  letter-spacing: 3px;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.section-head h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-top: 8px;
+}
+
+.section-text {
+  max-width: 520px;
+  margin: 14px auto 0;
+  line-height: 1.7;
+  font-size: 1.3rem;
+}
+
+.highlight {
+  color: var(--accent-dark);
+}
+
+
+/* ---------- 5. Our menu ---------- */
+.menu {
+  padding: 80px 8%;
+}
+
+.menu-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.tab-btn {
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  padding: 5px 14px;
+  font-size: 1.55rem;
+  border-radius: 15px;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+.menu-slider {
+  position: relative;
+}
+
+.menu-row {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 16px;
+  scrollbar-width: none;
+}
+
+.menu-row::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-card {
+  flex: 0 0 300px;
+  height: 420px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+  cursor: pointer;
+}
+
+.menu-card.hide {
+  display: none;
+}
+
+.menu-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.menu-card:hover img {
+  transform: scale(1.08);
+}
+
+/* Text block: same height on every card, so tag and name start at the same place */
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  color: #fff;
+  background: linear-gradient(to top, rgba(47, 62, 52, 0.9), transparent);
+  transition: background 0.3s;
+}
+
+.menu-card:hover .card-info {
+  background: linear-gradient(to top, rgba(79, 122, 92, 0.95), rgba(79, 122, 92, 0.4));
+}
+
+.card-tag {
+  align-self: flex-start;
+  display: inline-block;
+  background: var(--accent);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+
+.card-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 6px;
+}
+
+.card-info p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.price {
+  display: block;
+  margin-top: auto;
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* hover animation for the card text */
+.card-info h3,
+.card-info p,
+.card-info .price {
+  transition: transform 0.3s, color 0.3s;
+}
+
+.menu-card:hover .card-info h3 {
+  color: var(--accent);
+  transform: translateY(-6px);
+}
+
+.menu-card:hover .card-info p {
+  transform: translateY(-6px);
+}
+
+.menu-card:hover .card-info .price {
+  color: var(--accent);
+  transform: translateY(-6px);
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.arrow-left {
+  left: -24px;
+}
+
+.arrow-right {
+  right: -24px;
+}
+
+/* few cards: centre them and hide the arrows (class added by script.js) */
+.menu-slider.few .menu-row {
+  justify-content: center;
+}
+
+.menu-slider.few .arrow {
+  display: none;
+}
+
+
+/* ---------- 6. Signature blends ---------- */
+.blends {
+  padding: 80px 8%;
+  background: linear-gradient(180deg, #E4EEDF, var(--bg));
+  text-align: center;
+}
+
+.blend-showcase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blend-item {
+  background: #fff;
+  padding: 12px;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(47, 62, 52, 0.18);
+  position: relative;
+  transition: transform 0.3s;
+}
+
+.blend-item:hover {
+  transform: translateY(-8px);
+}
+
+.blend-item img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.blend-name {
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.blend-line {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  opacity: 0.8;
+}
+
+.blend-side {
+  width: 280px;
+  z-index: 1;
+}
+
+.blend-side img {
+  height: 260px;
+}
+
+.blend-main {
+  width: 340px;
+  z-index: 2;
+}
+
+.blend-main img {
+  height: 340px;
+}
+
+.blend-side:first-child {
+  margin-right: -50px;
+}
+
+.blend-side:last-child {
+  margin-left: -50px;
+}
+
+
+/* ---------- 7. Team ---------- */
+.team {
+  padding: 80px 8%;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(47, 62, 52, 0.08);
+}
+
+.team-photo {
+  border: 1px dashed #b9b4a6;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 14px;
+}
+
+.social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.social a:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+.team-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+}
+
+.role {
+  color: var(--accent-dark);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  padding: 6px 0 8px;
+}
+
+.bio {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0 14px 20px;
+  opacity: 0.8;
+}
+
+
+/* ---------- 8. Find us ---------- */
+.find-us {
+  padding: 80px 8%;
+  background: #EDF2E8;
+}
+
+.map-box {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.map-box iframe {
+  width: 100%;
+  height: 360px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.location-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  max-width: 1100px;
+  margin: 28px auto 0;
+}
+
+.location-card {
+  flex: 1;
+  max-width: 420px;
+  background: #fff;
+  padding: 28px;
+  border-radius: 8px;
+  border: 1px solid rgba(47, 62, 52, 0.1);
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.location-card:hover {
+  border-color: var(--primary);
+  transform: translateY(-4px);
+}
+
+.location-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 18px;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+.info i {
+  color: var(--accent);
+  margin-top: 4px;
+}
+
+.divider {
+  height: 4px;
+  background: var(--bg);
+  margin: 20px 0;
+}
+
+.get-direction {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: color 0.3s;
+}
+
+.get-direction:hover {
+  color: var(--accent-dark);
+}
+
+
+/* ---------- 9. Footer ---------- */
+.footer {
+  background: var(--primary);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 70px 8% 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* the logo lines are black, so give the icon a white circle on the green footer */
+.footer-logo {
+  display: inline-flex;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.footer-logo .logo-img {
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px;
+  height: 52px;
+}
+
+.footer-col p {
+  line-height: 1.7;
+}
+
+.footer-col h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer-col h4::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--accent);
+  margin-top: 10px;
+}
+
+.footer-col li {
+  margin-bottom: 12px;
+}
+
+.footer-col li a {
+  transition: color 0.3s;
+}
+
+.footer-col li a:hover {
+  color: var(--accent);
+}
+
+.footer-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.footer-social a {
+  width: 38px;
+  height: 38px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, color 0.3s;
+}
+
+.footer-social a:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+.hours i {
+  color: var(--accent);
+  margin-right: 8px;
+}
+
+.footer-btn {
+  margin-top: 16px;
+  background: var(--accent);
+  color: var(--text);
+}
+
+.footer-btn:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
+.footer-bottom {
+  max-width: 1100px;
+  margin: 50px auto 0;
+  padding: 22px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+
+/* ---------- 10. Scroll to top ---------- */
+.to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, background 0.3s;
+  z-index: 10;
+}
+
+.to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.to-top:hover {
+  background: var(--accent);
+  color: var(--text);
+}
+
+
+/* ---------- 11. Keyboard focus + reduced motion ---------- */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE: always at the very bottom, big to small
+   ===================================================== */
+
+/* ---------- Menu turns into the hamburger early, because the nav text is big ---------- */
+@media (max-width: 1100px) {
+  .navbar {
+    position: relative;
+    padding: 18px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: 14px;
+  }
+
+  .btn-contact {
+    margin-left: auto;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg);
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 8px 16px rgba(47, 62, 52, 0.12);
+    z-index: 5;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 14px 5%;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(47, 62, 52, 0.1);
+  }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 767px) {
+  .hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(247, 243, 234, 0.75);
+    z-index: -1;
+  }
+
+  .hero-content {
+    padding: 0 5%;
+    max-width: 100%;
+  }
+
+  .hero-small {
+    font-size: 1.2rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .btn-contact {
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+
+  .logo-img {
+    height: 36px;
+  }
+
+  .section-tag {
+    font-size: 1.8rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.9rem;
+  }
+
+  .section-text {
+    font-size: 1.1rem;
+  }
+
+  .menu {
+    padding: 60px 5%;
+  }
+
+  .tab-btn {
+    padding: 8px 18px;
+    font-size: 1rem;
+  }
+
+  .menu-card {
+    flex: 0 0 260px;
+    height: 380px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .blends {
+    padding: 60px 5%;
+  }
+
+  .blend-showcase {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .blend-side,
+  .blend-main {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .blend-side:first-child,
+  .blend-side:last-child {
+    margin: 0;
+  }
+
+  .blend-side img,
+  .blend-main img {
+    height: 260px;
+  }
+
+  .team {
+    padding: 60px 5%;
+  }
+
+  .team-photo img {
+    height: 260px;
+  }
+
+  .find-us {
+    padding: 60px 5%;
+  }
+
+  .map-box iframe {
+    height: 280px;
+  }
+
+  .location-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .location-card {
+    width: 100%;
+  }
+
+  .footer {
+    padding: 50px 5% 0;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---------- Small phones ---------- */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .logo-img {
+    height: 32px;
+  }
+
+  .menu-toggle {
+    margin-left: 8px;
+    font-size: 1.6rem;
+  }
+
+  .btn-contact {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+
+  .hero-small {
+    font-size: 1.05rem;
+  }
+
+  .hero-content h1 {
+    font-size: 1.9rem;
+  }
+
+  .section-tag {
+    font-size: 1.5rem;
+  }
+
+  .section-head h2 {
+    font-size: 1.6rem;
+  }
+
+  .menu-card {
+    flex: 0 0 240px;
+    height: 360px;
+  }
+
+  .blend-side img,
+  .blend-main img {
+    height: 220px;
+  }
+
+  .team-photo img {
+    height: 240px;
+  }
+
+  .location-card {
+    padding: 22px;
+  }
+}
+
+/* ---------- Large screens ---------- */
+@media (min-width: 1400px) {
+  .navbar,
+  .menu,
+  .blends,
+  .team,
+  .find-us,
+  .footer {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
+  .hero-content {
+    padding-left: 10%;
+    max-width: 680px;
+  }
+
+  .hero-small {
+    font-size: 1.8rem;
+  }
+
+  .hero-content h1 {
+    font-size: 4rem;
+  }
+
+  .section-head h2 {
+    font-size: 2.8rem;
+  }
+}
